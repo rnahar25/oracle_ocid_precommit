@@ -16,7 +16,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     for filename in args.filenames:
         with open(filename, 'rb') as inputfile:
             for i, line in enumerate(inputfile):
-                if re.search(rb'ocid\d.[a-z1-9A-Z]*.oc\d.[a-z1-9A-Z]*.[a-z1-9A-Z]*', line) is not None:
+                if re.search(rb'ocid[123]\.[a-z1-9A-Z]*\.oc\d\.[a-z1-9A-Z]*\.[a-z1-9A-Z]*', line) is not None:
                     print(
                         f'OCID found in {filename}:{i + 1}',
                     )

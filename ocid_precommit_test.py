@@ -8,6 +8,8 @@ TESTS = (
     (b'ocid1.instance.oc1.phx.abuw4ljrlsfiqw6vzzxb43vyypt4pkodawglp3wqxjqofakrwvou52gb6s5a', 1),
     (b'ocid1.instance.oc2.phx.abuw4ljrlsfiqw6vzzxb43vyypt4pkodawglp3wqxjqofakrwvou52gb6s5a', 1),
     (b'ocid1.instance.oc3.phx.abuw4ljrlsfiqw6vzzxb43vyypt4pkodawglp3wqxjqofakrwvou52gb6s5a', 1),
+    (b'ocid7.instance.oc1.phx.abu5a', 0),
+    (b'ocid1.instance.oc1.abuw4ljrlsfiqw6vzzxb43vyypt4pkodawglp3wqxjqofakrwvou52gb6s5a', 0),
     (b'ocid in instance', 0),
     (b'please include ocid link', 0),
     (b'', 0),
