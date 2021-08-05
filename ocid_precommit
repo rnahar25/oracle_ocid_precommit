@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+
+import argparse
+import os.path
+from typing import Optional
+from typing import Sequence
+import re
+
+def main(argv: Optional[Sequence[str]] = None) -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filenames', nargs='*')
+    parser.add_argument('--assume-in-merge', action='store_true')
+    args = parser.parse_args(argv)
+
+    retcode = 0
+    for filename in args.filenames:
+        with open(filename, 'rb') as inputfile:
+            for i, line in enumerate(inputfile):
+                if re.search(rb'ocid\d.[a-z1-9A-Z]*.oc\d.[a-z1-9A-Z]*.[a-z1-9A-Z]*', line) is not None:
+                    print(
+                        f'OCID found in {filename}:{i + 1}',
+                    )
+                    retcode = 1
+
+    return retcode
+
+if __name__ == '__main__':
+    exit(main())
